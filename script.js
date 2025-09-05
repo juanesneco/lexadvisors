@@ -112,10 +112,31 @@ function loadFooter() {
   }
 }
 
+// Contact Form Loading Functionality
+function loadContactForm() {
+  const contactFormContainer = document.getElementById('contact-form-container');
+  if (contactFormContainer) {
+    // Determine the correct path to contact-form.html based on current page location
+    const currentPath = window.location.pathname;
+    const isInServicesDir = currentPath.includes('/services/');
+    const contactFormPath = isInServicesDir ? '../contact-form.html' : 'contact-form.html';
+    
+    fetch(contactFormPath)
+      .then(response => response.text())
+      .then(html => {
+        contactFormContainer.innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error loading contact form:', error);
+      });
+  }
+}
+
 // CV Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Load footer
+  // Load footer and contact form
   loadFooter();
+  loadContactForm();
   
   const cvPopup = document.getElementById('cv-popup');
   const cvContent = document.getElementById('cv-content');
