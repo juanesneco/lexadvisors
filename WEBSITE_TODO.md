@@ -3,11 +3,12 @@
 ## 🚀 Priority Tasks
 
 ### 1. Contact Form Integration
-- [ ] **Connect contact form to FormSpring**
-  - Set up FormSpring account/configuration
-  - Update form action URL in `contact.html`
-  - Test form submissions
-  - Verify email notifications are working
+- [ ] **Connect contact form to webhook (replacing Formspree)**
+  - Set up webhook service (Zapier, Make.com, or custom)
+  - Replace placeholder webhook URL in `contact-form.html`
+  - Test form submissions with webhook
+  - Verify data is being received correctly
+  - Configure email notifications or CRM integration
   - Add success/error messages for user feedback
 
 ### 2. Content Updates Required
@@ -46,17 +47,18 @@
 ## 📋 Detailed Task Breakdown
 
 ### Contact Form Implementation
-**File:** `contact.html`
+**File:** `contact-form.html`
 **Priority:** High
-**Dependencies:** FormSpring account setup
+**Dependencies:** Webhook service setup
 
 **Steps:**
-1. Set up FormSpring account
-2. Get form endpoint URL
-3. Update form action attribute
-4. Add form validation (client-side)
-5. Add success/error message handling
-6. Test thoroughly
+1. Set up webhook service (Zapier, Make.com, or custom server)
+2. Get webhook endpoint URL
+3. Replace placeholder URL in contact-form.html
+4. Configure webhook to handle JSON data format
+5. Set up email notifications or CRM integration
+6. Test form submissions thoroughly
+7. Verify data format and delivery
 
 ### Service Content Updates
 **Files:** All service pages in `/services/` directory
@@ -135,6 +137,11 @@
 - [x] Resolved CSS conflicts between pages
 - [x] Updated Javier's contact information
 - [x] Implemented responsive design for profile banners
+- [x] Made logo clickable across all pages (links to home)
+- [x] Updated home page background image to lex_background.jpeg
+- [x] Fixed Francisco Javier Mazoy Kuri's image sizing issue
+- [x] Updated Francisco Javier Mazoy Kuri to use Lex logo
+- [x] Modified contact form to use webhook instead of Formspree
 
 ---
 

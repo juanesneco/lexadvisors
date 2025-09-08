@@ -3,7 +3,8 @@
       <h2>Contact Us</h2>
       <p>Ready to get started? Let's discuss how we can help you navigate your legal needs with confidence and expertise.</p>
       
-      <form class="contact-form" action="https://formspree.io/f/xdklpwqz" method="POST">
+      <!-- Replace YOUR_WEBHOOK_URL_HERE with your actual webhook URL -->
+      <form class="contact-form" action="YOUR_WEBHOOK_URL_HERE" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name *</label>
@@ -70,13 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
       submitButton.textContent = 'Sending...';
       submitButton.disabled = true;
       
-      // Submit form data
+      // Submit form data as JSON
       const formData = new FormData(form);
+      const jsonData = {};
+      
+      // Convert FormData to JSON object
+      for (let [key, value] of formData.entries()) {
+        jsonData[key] = value;
+      }
       
       fetch(form.action, {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(jsonData),
         headers: {
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
       })
