@@ -3,8 +3,8 @@
       <h2>Contact Us</h2>
       <p>Ready to get started? Let's discuss how we can help you navigate your legal needs with confidence and expertise.</p>
       
-      <!-- Replace YOUR_WEBHOOK_URL_HERE with your actual webhook URL -->
-      <form class="contact-form" action="YOUR_WEBHOOK_URL_HERE" method="POST">
+      <!-- Make.com webhook URL for form submissions -->
+      <form class="contact-form" action="https://hook.us1.make.com/4tb16e2573ducwy6necora78b12wqht5" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name *</label>
@@ -71,20 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
       submitButton.textContent = 'Sending...';
       submitButton.disabled = true;
       
-      // Submit form data as JSON
+      // Submit form data as form-encoded (Make.com webhook format)
       const formData = new FormData(form);
-      const jsonData = {};
       
-      // Convert FormData to JSON object
-      for (let [key, value] of formData.entries()) {
-        jsonData[key] = value;
-      }
+      // Convert FormData to URL-encoded string
+      const urlEncodedData = new URLSearchParams(formData).toString();
       
       fetch(form.action, {
         method: 'POST',
-        body: JSON.stringify(jsonData),
+        body: urlEncodedData,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
           'Accept': 'application/json'
         }
       })
