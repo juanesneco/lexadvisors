@@ -1777,9 +1777,9 @@ p, span, div, a, button, input, textarea, select, label {
     width: 100%;
   }
   
-  /* Metrics grid for extra small screens - maintain 2x2 layout */
+  /* Metrics grid for extra small screens - single column layout */
   .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
   
@@ -2220,7 +2220,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
@@ -2445,7 +2445,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   
