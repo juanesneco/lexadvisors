@@ -1528,7 +1528,7 @@ p, span, div, a, button, input, textarea, select, label {
   
   .hero-arch {
     min-height: 60vh;
-    margin-top: 0px !important; /* Remove margin since body padding handles spacing */
+    margin-top: 70px !important; /* Account for fixed header height on mobile */
     padding-top: 0px !important;
   }
   
@@ -1838,6 +1838,10 @@ p, span, div, a, button, input, textarea, select, label {
   
   .logo-img {
     height: 45px;
+  }
+  
+  .hero-arch {
+    margin-top: 45px !important; /* Account for smaller header height on extra small screens */
   }
   
   .logo-main {
@@ -2516,7 +2520,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   .hero-arch {
     min-height: 60vh;
-    margin-top: 0px !important; /* Remove margin since body padding handles spacing */
+    margin-top: 70px !important; /* Account for fixed header height on mobile */
     padding-top: 0px !important;
   }
   .hero-headline {
