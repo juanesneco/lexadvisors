@@ -1446,7 +1446,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   body {
-    padding-top: 50px;
+    padding-top: 20px;
   }
   
   .logo-img {
@@ -1511,7 +1511,7 @@ p, span, div, a, button, input, textarea, select, label {
   
   .hero-arch {
     min-height: 60vh;
-    margin-top: 0px; /* Remove margin since body padding handles spacing */
+    margin-top: 0px !important; /* Remove margin since body padding handles spacing */
   }
   
   .about-preview, .about-main, .services-preview, .service, .privacy-content {
@@ -2484,7 +2484,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   .hero-arch {
     min-height: 60vh;
-    margin-top: 0px; /* Remove margin since body padding handles spacing */
+    margin-top: 0px !important; /* Remove margin since body padding handles spacing */
   }
   .hero-headline {
     font-size: 2.5rem;
