@@ -1266,12 +1266,13 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .service-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 2rem;
   }
   
   .service-image {
-    order: 2; /* Image comes after text */
+    order: 2 !important; /* Image comes after text */
+    position: static !important;
   }
   
   .related-services {
@@ -1485,12 +1486,13 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .service-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
   
   .service-image {
-    order: 2; /* Image comes after text */
+    order: 2 !important; /* Image comes after text */
+    position: static !important;
   }
   
   .related-services {
@@ -1855,12 +1857,13 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .service-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
   
   .service-image {
-    order: 2; /* Image comes after text */
+    order: 2 !important; /* Image comes after text */
+    position: static !important;
   }
   
   .related-services {
@@ -2271,13 +2274,13 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .service-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 2rem;
   }
   
   .service-image {
-    position: static;
-    order: -1;
+    position: static !important;
+    order: 2 !important; /* Image comes after text */
   }
   
   .service-main-image {
