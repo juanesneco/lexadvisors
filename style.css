@@ -1242,11 +1242,11 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .logo-main {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .logo-tagline {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
   
   .main-navigation {
@@ -1282,6 +1282,45 @@ p, span, div, a, button, input, textarea, select, label {
   .related-services .services-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .related-services .service-card {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(16, 64, 90, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .related-services .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .related-services .service-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .related-services .service-icon-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .related-services .service-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .related-services .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
   }
   
   .mobile-menu-toggle {
@@ -1323,8 +1362,8 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .about-preview, .about-main, .services-preview, .service, .privacy-content {
-    padding: 1.5rem;
-    margin: 2rem 1rem;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
   }
   
   .hero {
@@ -1342,13 +1381,17 @@ p, span, div, a, button, input, textarea, select, label {
   /* About section mobile layout - stack vertically */
   .about-content-wide {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .about-text-section {
     width: 100% !important;
     flex: none !important;
     order: 1;
+  }
+  
+  .about-text-section h2 {
+    margin-bottom: 1rem;
   }
   
   .about-image-section {
@@ -1375,13 +1418,28 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .services-grid-overview {
+    flex-direction: column;
     gap: 1.5rem;
+    overflow-x: visible;
+    margin: 0 1rem;
   }
   
   .service-overview-card {
-    flex: 0 0 280px;
-    min-width: 280px;
-    height: 400px;
+    flex: 1 1 auto;
+    min-width: auto;
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  
+  .service-overview-image {
+    height: 200px;
+  }
+  
+  .service-overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .team-grid {
@@ -1466,11 +1524,15 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .logo-img {
-    height: 50px;
+    height: 40px;
   }
   
   .logo-main {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.65rem;
   }
   
   .service-hero-content {
@@ -1504,6 +1566,45 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 1.5rem;
   }
   
+  .related-services .service-card {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(16, 64, 90, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .related-services .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .related-services .service-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .related-services .service-icon-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .related-services .service-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .related-services .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
   .logo-tagline {
     font-size: 0.7rem;
   }
@@ -1528,19 +1629,19 @@ p, span, div, a, button, input, textarea, select, label {
   
   .hero-arch {
     min-height: 60vh;
-    margin-top: 70px !important; /* Account for fixed header height on mobile */
-    padding-top: 0px !important;
+    margin-top: 0px !important;
+    padding-top: 70px !important; /* Add padding to push background image below header */
   }
   
   .about-preview, .about-main, .services-preview, .service, .privacy-content {
     padding: 1rem;
-    margin: 1.5rem 0.5rem;
+    margin: 1rem 0.5rem;
   }
   
   /* About section mobile layout - ensure vertical stacking */
   .about-content-wide {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .about-text-section {
@@ -1586,13 +1687,28 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .services-grid-overview {
+    flex-direction: column;
     gap: 1rem;
+    overflow-x: visible;
+    margin: 0 0.5rem;
   }
   
   .service-overview-card {
-    flex: 0 0 250px;
-    min-width: 250px;
-    height: 380px;
+    flex: 1 1 auto;
+    min-width: auto;
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  
+  .service-overview-image {
+    height: 200px;
+  }
+  
+  .service-overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .service-preview-card,
@@ -1773,7 +1889,7 @@ p, span, div, a, button, input, textarea, select, label {
   /* About section mobile layout - ensure vertical stacking on extra small screens */
   .about-content-wide {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .about-text-section {
@@ -1837,15 +1953,20 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .logo-img {
-    height: 45px;
+    height: 35px;
   }
   
   .hero-arch {
-    margin-top: 45px !important; /* Account for smaller header height on extra small screens */
+    margin-top: 0px !important;
+    padding-top: 45px !important; /* Add padding to push background image below smaller header */
   }
   
   .logo-main {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.6rem;
   }
   
   .service-hero-content {
@@ -2035,7 +2156,7 @@ p, span, div, a, button, input, textarea, select, label {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 80px 0 0 0; /* Add top padding to push background below header */
   margin-bottom: 0;
   color: #fff;
   text-align: center;
@@ -2299,7 +2420,42 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .related-services .service-card {
-    padding: 1rem;
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(16, 64, 90, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .related-services .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .related-services .service-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .related-services .service-icon-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .related-services .service-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .related-services .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
   }
   
   .footer-main {
@@ -2520,8 +2676,8 @@ p, span, div, a, button, input, textarea, select, label {
   }
   .hero-arch {
     min-height: 60vh;
-    margin-top: 70px !important; /* Account for fixed header height on mobile */
-    padding-top: 0px !important;
+    margin-top: 0px !important;
+    padding-top: 70px !important; /* Add padding to push background image below header */
   }
   .hero-headline {
     font-size: 2.5rem;
@@ -2546,6 +2702,7 @@ p, span, div, a, button, input, textarea, select, label {
   
   .about-text-section h2 {
     font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
   
   .about-stats {
@@ -2594,14 +2751,29 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .services-grid-overview {
+    flex-direction: column;
     gap: 1rem;
+    overflow-x: visible;
+    margin: 0 0.5rem;
   }
   
   .service-overview-card {
-    flex: 0 0 220px;
-    min-width: 220px;
-    height: 360px;
-    margin: 0 0.5rem;
+    flex: 1 1 auto;
+    min-width: auto;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    margin: 0;
+  }
+  
+  .service-overview-image {
+    height: 180px;
+  }
+  
+  .service-overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .contact-form-section {
@@ -3635,7 +3807,7 @@ body:has(.hero-arch) main {
 
 /* Alternative for browsers that don't support :has() */
 .hero-arch {
-  margin-top: 80px; /* Account for fixed header */
+  margin-top: 0; /* No margin needed, using padding instead */
 }
 
 /* Team page specific - white background */
