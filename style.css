@@ -18,6 +18,21 @@ body {
   background: #fff;
   color: var(--color-text);
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Ensure all headings use Times New Roman font */
@@ -2001,8 +2016,9 @@ p, span, div, a, button, input, textarea, select, label {
 .hero-arch {
   position: relative;
   min-height: 100vh;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  max-width: 100vw;
+  margin-left: 0;
   background: url('./files/images/general/lex_background.jpeg') center center/cover no-repeat;
   display: flex;
   align-items: center;
