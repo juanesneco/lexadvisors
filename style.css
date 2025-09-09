@@ -1798,6 +1798,10 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 0.75rem;
   }
   
+  .metrics-section .metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
   .metric-card {
     padding: 0.75rem;
   }
@@ -2240,6 +2244,10 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 1.5rem;
   }
   
+  .metrics-section .metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
   .metrics-header h2 {
     font-size: 2rem;
   }
@@ -2463,6 +2471,10 @@ p, span, div, a, button, input, textarea, select, label {
   .metrics-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem;
+  }
+  
+  .metrics-section .metrics-grid {
+    grid-template-columns: 1fr !important;
   }
   
   .metrics-header h2 {
