@@ -3219,7 +3219,7 @@ p, span, div, a, button, input, textarea, select, label {
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .contact-form-content {
@@ -4666,7 +4666,7 @@ main h1 {
 
 @media (max-width: 600px) {
   #contact-form-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   
   .contact-form-content {
@@ -4717,7 +4717,7 @@ main h1 {
 
 @media (max-width: 480px) {
   #contact-form-container {
-    padding: 0 0.25rem;
+    padding: 0 0.75rem;
   }
   
   .contact-form-content {
