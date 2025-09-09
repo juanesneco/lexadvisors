@@ -1779,7 +1779,7 @@ p, span, div, a, button, input, textarea, select, label {
   
   /* Metrics grid for extra small screens - single column layout */
   .metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 0.75rem;
   }
   
@@ -2220,7 +2220,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
   
@@ -2445,7 +2445,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
   }
   
