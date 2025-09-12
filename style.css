@@ -583,6 +583,7 @@ p, span, div, a, button, input, textarea, select, label {
   font-style: italic;
 }
 
+
 /* Leadership Banners */
 .leadership-banner {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
@@ -1072,6 +1073,21 @@ p, span, div, a, button, input, textarea, select, label {
   color: var(--color-secondary);
 }
 
+.extension-note {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(129, 157, 170, 0.1);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 4px 4px 0;
+}
+
+.extension-note a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .office-map {
   background: #fff;
   padding: 2rem;
@@ -1175,6 +1191,17 @@ p, span, div, a, button, input, textarea, select, label {
   margin-bottom: 0.75rem;
   line-height: 1.4;
   font-size: 0.9rem;
+}
+
+.footer-contact a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 .contact-info strong {
   color: var(--color-primary);
