@@ -168,8 +168,14 @@
           <h2>What We Provide</h2>
           <p>Comprehensive legal services across 10 specialized practice areas</p>
         </div>
-        <div class="services-grid-overview">
-          <div class="service-overview-card">
+        <div class="services-carousel-container">
+          <button class="carousel-arrow carousel-arrow-left" id="carousel-left" aria-label="Previous service">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="services-grid-overview" id="services-carousel">
+            <div class="service-overview-card">
             <div class="service-overview-image">
               <img src="files/images/services/mediation.jpg" alt="Alternative Dispute Resolution">
             </div>
@@ -289,6 +295,11 @@
               <a href="services/title-search-due-diligence.html" class="service-overview-link">Learn More →</a>
             </div>
           </div>
+          <button class="carousel-arrow carousel-arrow-right" id="carousel-right" aria-label="Next service">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>

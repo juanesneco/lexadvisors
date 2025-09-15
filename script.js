@@ -72,12 +72,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Header scroll effect
 const siteHeader = document.querySelector('.site-header');
 if (siteHeader) {
+  // Ensure header is always opaque on load
+  siteHeader.style.background = '#fff';
+  siteHeader.style.backdropFilter = 'none';
+  
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      siteHeader.style.background = 'rgba(255, 255, 255, 0.98)';
+      siteHeader.style.background = '#fff';
       siteHeader.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
-      siteHeader.style.background = 'rgba(255, 255, 255, 0.95)';
+      siteHeader.style.background = '#fff';
       siteHeader.style.boxShadow = 'none';
     }
   });
@@ -132,11 +136,95 @@ function loadContactForm() {
   }
 }
 
+// Services Carousel Functionality
+function initServicesCarousel() {
+  const carousel = document.getElementById('services-carousel');
+  const leftArrow = document.getElementById('carousel-left');
+  const rightArrow = document.getElementById('carousel-right');
+  
+  if (!carousel || !leftArrow || !rightArrow) return;
+  
+  let currentIndex = 0;
+  const cards = carousel.querySelectorAll('.service-overview-card');
+  const totalCards = cards.length;
+  
+  // Function to update arrow states
+  function updateArrows() {
+    leftArrow.disabled = currentIndex === 0;
+    rightArrow.disabled = currentIndex >= totalCards - 1;
+    
+    // Add visual feedback
+    if (leftArrow.disabled) {
+      leftArrow.style.opacity = '0.3';
+    } else {
+      leftArrow.style.opacity = '0.9';
+    }
+    
+    if (rightArrow.disabled) {
+      rightArrow.style.opacity = '0.3';
+    } else {
+      rightArrow.style.opacity = '0.9';
+    }
+  }
+  
+  // Function to scroll to specific card
+  function scrollToCard(index) {
+    if (index < 0 || index >= totalCards) return;
+    
+    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
+    const scrollPosition = index * cardWidth;
+    
+    carousel.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth'
+    });
+    
+    currentIndex = index;
+    updateArrows();
+  }
+  
+  // Left arrow click
+  leftArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      scrollToCard(currentIndex - 1);
+    }
+  });
+  
+  // Right arrow click
+  rightArrow.addEventListener('click', () => {
+    if (currentIndex < totalCards - 1) {
+      scrollToCard(currentIndex + 1);
+    }
+  });
+  
+  // Update arrows on scroll (for touch scrolling)
+  carousel.addEventListener('scroll', () => {
+    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
+    const newIndex = Math.round(carousel.scrollLeft / cardWidth);
+    
+    if (newIndex !== currentIndex) {
+      currentIndex = newIndex;
+      updateArrows();
+    }
+  });
+  
+  // Initialize arrows
+  updateArrows();
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    updateArrows();
+  });
+}
+
 // CV Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
   // Load footer and contact form
   loadFooter();
   loadContactForm();
+  
+  // Initialize services carousel
+  initServicesCarousel();
   
   const cvPopup = document.getElementById('cv-popup');
   const cvContent = document.getElementById('cv-content');
