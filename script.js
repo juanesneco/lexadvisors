@@ -296,4 +296,20 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
       });
   }
-}); 
+});
+
+// Toggle role content function for roles and responsibilities page
+function toggleRole(roleId) {
+  const roleContent = document.getElementById(roleId);
+  const toggleIcon = document.querySelector(`[onclick="toggleRole('${roleId}')"] .toggle-icon`);
+  
+  if (roleContent && toggleIcon) {
+    if (roleContent.style.display === 'none' || roleContent.style.display === '') {
+      roleContent.style.display = 'block';
+      toggleIcon.textContent = '−';
+    } else {
+      roleContent.style.display = 'none';
+      toggleIcon.textContent = '+';
+    }
+  }
+} 
