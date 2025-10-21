@@ -952,13 +952,22 @@ p, span, div, a, button, input, textarea, select, label {
 }
 
 /* Contact Page */
-.contact-info, .map-embed, .contact-form-section, .legal-disclaimer {
+.contact-info, .map-embed, .legal-disclaimer {
   max-width: 700px;
   margin: 2rem auto;
   padding: 1.5rem;
   background: #faffff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(25,53,83,0.04);
+}
+
+.contact-form-section {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 .contact-info address {
   font-style: normal;
@@ -1491,7 +1500,7 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 1rem;
     overflow-x: auto;
     margin: 0;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -1503,8 +1512,22 @@ p, span, div, a, button, input, textarea, select, label {
     width: calc(100vw - 2.5rem);
     height: auto;
     max-width: calc(100vw - 2.5rem);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     margin: 0 0.75rem;
+  }
+  
+  .service-overview-content {
+    padding: 1.25rem;
+  }
+  
+  .service-overview-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .service-overview-content p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
   }
   
   .service-overview-image {
@@ -1766,7 +1789,7 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 1rem;
     overflow-x: auto;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -1778,7 +1801,7 @@ p, span, div, a, button, input, textarea, select, label {
     width: calc(100vw - 2rem);
     height: auto;
     max-width: calc(100vw - 2rem);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     margin: 0 0.5rem;
   }
   
@@ -1927,11 +1950,11 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .contact-form-section {
-    padding: 3rem 0;
+    padding: 0;
   }
   
   .contact-form {
-    padding: 1.5rem;
+    padding: 0;
   }
   
   .contact-form-content h2 {
@@ -2843,7 +2866,7 @@ p, span, div, a, button, input, textarea, select, label {
     gap: 1rem;
     overflow-x: auto;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -2856,11 +2879,25 @@ p, span, div, a, button, input, textarea, select, label {
     height: auto;
     max-width: calc(100vw - 1.5rem);
     margin: 0 0.25rem;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+  }
+  
+  .service-overview-content {
+    padding: 1rem;
+  }
+  
+  .service-overview-content h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1rem;
+  }
+  
+  .service-overview-content p {
+    margin: 0 0 0.8rem 0;
+    font-size: 0.85rem;
   }
   
   .service-overview-image {
-    height: 180px;
+    height: 160px;
   }
   
   .service-overview-image img {
@@ -2870,11 +2907,11 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .contact-form-section {
-    padding: 3rem 0;
+    padding: 0;
   }
   
   .contact-form {
-    padding: 2rem;
+    padding: 0;
   }
   
   .contact-grid {
@@ -3330,7 +3367,7 @@ p, span, div, a, button, input, textarea, select, label {
 /* What We Provide Section */
 .services-overview {
   padding: 4rem 0;
-  background: #fff;
+  background: transparent;
   position: relative;
 }
 
@@ -3422,7 +3459,7 @@ p, span, div, a, button, input, textarea, select, label {
   
   /* Adjust service grid padding - minimal padding for maximum card width */
   .services-grid-overview {
-    padding: 1rem 0;
+    padding: 0;
   }
   
   /* Make cards take full width with no padding */
@@ -3435,25 +3472,7 @@ p, span, div, a, button, input, textarea, select, label {
   }
 }
 
-/* Carousel indicators for mobile */
-.services-overview::after {
-  content: '';
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: rgba(16, 64, 90, 0.2);
-  border-radius: 2px;
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .services-overview::after {
-    display: block;
-  }
-}
+/* Carousel indicators for mobile - removed to eliminate gray background */
 
 /* Enhanced carousel indicators */
 .carousel-indicators {
@@ -3522,14 +3541,16 @@ p, span, div, a, button, input, textarea, select, label {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  padding: 1rem 0;
+  padding: 0 2rem;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) transparent;
-  margin: 0 2rem;
-  align-items: stretch;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-start;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  max-width: 1200px;
 }
 
 .services-grid-overview::-webkit-scrollbar {
@@ -3550,26 +3571,28 @@ p, span, div, a, button, input, textarea, select, label {
 }
 
 .service-overview-card {
-  background: #fff;
+  background: #f8f9fa;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.12);
   flex: 0 0 304px;
   min-width: 304px;
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  height: 420px;
-  scroll-snap-align: start;
+  min-height: 380px;
+  height: auto;
+  scroll-snap-align: center;
   margin: 0 0.5rem;
 }
 
 .service-overview-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+  background: #f5f6f7;
 }
 
 .service-overview-image {
@@ -3595,36 +3618,30 @@ p, span, div, a, button, input, textarea, select, label {
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
-  background: #fff;
+  background: transparent;
 }
 
 .service-overview-content h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.3;
 }
 
-.service-overview-content p {
-  text-align: left;
-  line-height: 1.5;
-  color: #555;
-  margin: 0 0 1rem 0;
-  font-size: 0.9rem;
-}
 
 .service-overview-link {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
   margin-top: auto;
+  align-self: flex-start;
 }
 
 .service-overview-link:hover {
@@ -3636,27 +3653,14 @@ p, span, div, a, button, input, textarea, select, label {
 .service-overview-content p {
   color: var(--color-text);
   line-height: 1.6;
-  margin-bottom: 0;
+  margin: 0 0 1rem 0;
   font-size: 0.95rem;
   font-family: 'Times New Roman', Times, serif;
   text-align: justify;
   text-justify: inter-word;
   font-weight: 400;
-  flex-grow: 1;
 }
 
-.service-overview-link {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-  margin-top: 1.5rem;
-}
-
-.service-overview-link:hover {
-  color: var(--color-secondary);
-}
 
 /* Contact Page Layout */
 .contact-page-layout {
@@ -3678,6 +3682,9 @@ p, span, div, a, button, input, textarea, select, label {
   padding: 0;
   background: transparent;
   margin: 0;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .office-info-section {
