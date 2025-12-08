@@ -1,3 +1,27 @@
+// Language Detection and Translations
+const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
+
+const translations = {
+  en: {
+    formErrorAllFields: 'Please fill in all fields.',
+    formErrorEmail: 'Please enter a valid email address.',
+    formSuccess: 'Thank you for your message! We will be in touch soon.',
+    cvNotAvailable: 'CV Not Available',
+    cvNotAvailableMessage: 'The CV for this team member is not currently available.',
+    sending: 'Sending...'
+  },
+  es: {
+    formErrorAllFields: 'Por favor complete todos los campos.',
+    formErrorEmail: 'Por favor ingrese un correo electrónico válido.',
+    formSuccess: '¡Gracias por su mensaje! Nos pondremos en contacto pronto.',
+    cvNotAvailable: 'CV No Disponible',
+    cvNotAvailableMessage: 'El CV de este miembro del equipo no está disponible actualmente.',
+    sending: 'Enviando...'
+  }
+};
+
+const t = translations[currentLang];
+
 // Mobile menu toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNavigation = document.querySelector('.main-navigation');
@@ -37,19 +61,19 @@ if (contactForm) {
     const email = contactForm.email.value.trim();
     const message = contactForm.message.value.trim();
     if (!name || !email || !message) {
-      formMessage.textContent = 'Please fill in all fields.';
+      formMessage.textContent = t.formErrorAllFields;
       formMessage.style.color = '#bfa046';
       return;
     }
     // Email format check
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-      formMessage.textContent = 'Please enter a valid email address.';
+      formMessage.textContent = t.formErrorEmail;
       formMessage.style.color = '#bfa046';
       return;
     }
     // Simulate successful submission
-    formMessage.textContent = 'Thank you for your message! We will be in touch soon.';
+    formMessage.textContent = t.formSuccess;
     formMessage.style.color = '#0a2342';
     contactForm.reset();
   });
@@ -91,22 +115,49 @@ if (siteHeader) {
 function loadFooter() {
   const footerContainer = document.getElementById('footer-container');
   if (footerContainer) {
-    // Determine the correct path to footer.html based on current page location
+    // Determine the correct path to footer.html based on current page location and language
     const currentPath = window.location.pathname;
+    const isSpanish = currentPath.includes('/es/');
     const isInServicesDir = currentPath.includes('/services/');
-    const footerPath = isInServicesDir ? '../footer.html' : 'footer.html';
-    
+    const isInTeamDir = currentPath.includes('/team/');
+
+    let footerPath;
+    if (isSpanish) {
+      // Spanish pages
+      if (isInServicesDir || isInTeamDir) {
+        // For Spanish pages in subdirectories (services or team), footer is one level up
+        footerPath = '../footer.html';
+      } else {
+        // For Spanish root level pages (/es/), footer is in the same directory
+        footerPath = 'footer.html';
+      }
+    } else {
+      // English pages
+      if (isInServicesDir || isInTeamDir) {
+        // For English pages in subdirectories (services or team), footer is one level up
+        footerPath = '../footer.html';
+      } else {
+        // For English root level pages, footer is in the same directory
+        footerPath = 'footer.html';
+      }
+    }
+
     fetch(footerPath)
       .then(response => response.text())
       .then(html => {
         footerContainer.innerHTML = html;
-        
-        // Fix logo path after loading footer
+
+        // Set logo path after footer is loaded
         const footerLogo = document.getElementById('footer-logo');
         if (footerLogo) {
-          const currentPath = window.location.pathname;
-          const isInServicesDir = currentPath.includes('/services/');
-          const logoPath = isInServicesDir ? '../files/logos/lex.png' : 'files/logos/lex.png';
+          let logoPath;
+          if (isSpanish) {
+            // Spanish pages - always one level up from /es/
+            logoPath = (isInServicesDir || isInTeamDir) ? '../../files/logos/lex.png' : '../files/logos/lex.png';
+          } else {
+            // English pages
+            logoPath = (isInServicesDir || isInTeamDir) ? '../files/logos/lex.png' : 'files/logos/lex.png';
+          }
           footerLogo.src = logoPath;
         }
       })
@@ -120,11 +171,33 @@ function loadFooter() {
 function loadContactForm() {
   const contactFormContainer = document.getElementById('contact-form-container');
   if (contactFormContainer) {
-    // Determine the correct path to contact-form.html based on current page location
+    // Determine the correct path to contact-form.html based on current page location and language
     const currentPath = window.location.pathname;
+    const isSpanish = currentPath.includes('/es/');
     const isInServicesDir = currentPath.includes('/services/');
-    const contactFormPath = isInServicesDir ? '../contact-form.html' : 'contact-form.html';
-    
+    const isInTeamDir = currentPath.includes('/team/');
+
+    let contactFormPath;
+    if (isSpanish) {
+      // Spanish pages
+      if (isInServicesDir || isInTeamDir) {
+        // For Spanish pages in subdirectories (services or team), contact form is one level up
+        contactFormPath = '../contact-form.html';
+      } else {
+        // For Spanish root level pages (/es/), contact form is in the same directory
+        contactFormPath = 'contact-form.html';
+      }
+    } else {
+      // English pages
+      if (isInServicesDir || isInTeamDir) {
+        // For English pages in subdirectories (services or team), contact form is one level up
+        contactFormPath = '../contact-form.html';
+      } else {
+        // For English root level pages, contact form is in the same directory
+        contactFormPath = 'contact-form.html';
+      }
+    }
+
     fetch(contactFormPath)
       .then(response => response.text())
       .then(html => {
@@ -287,10 +360,10 @@ document.addEventListener('DOMContentLoaded', function() {
         cvContent.innerHTML = `
           <div class="cv-popup-content">
             <div class="cv-header">
-              <h2>CV Not Available</h2>
+              <h2>${t.cvNotAvailable}</h2>
             </div>
             <div class="cv-section">
-              <p>The CV for this team member is not currently available.</p>
+              <p>${t.cvNotAvailableMessage}</p>
             </div>
           </div>
         `;
