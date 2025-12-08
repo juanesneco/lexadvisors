@@ -1,0 +1,107 @@
+<!-- Contact Form Component - Reusable across pages -->
+<div class="contact-form-content">
+      <h2>Contáctenos</h2>
+      <p>¿Listo para comenzar? Hablemos sobre cómo podemos ayudarle a navegar sus necesidades legales con confianza y experiencia.</p>
+
+      <!-- Make.com webhook URL for form submissions -->
+      <form class="contact-form" action="https://hook.us1.make.com/4tb16e2573ducwy6necora78b12wqht5" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">Nombre *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Apellido *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Número de Teléfono</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="service">¿Qué tipo de ayuda específica está buscando? *</label>
+          <select id="service" name="service" required>
+            <option value="">Seleccione un servicio</option>
+            <option value="alternative-dispute-resolution">Resolución Alternativa de Disputas (RAD)</option>
+            <option value="appraisals">Avalúos</option>
+            <option value="compliance-anti-money-laundering-privacy-law">Cumplimiento: Antilavado de Dinero y Ley de Privacidad</option>
+            <option value="construction-and-development">Construcción y Desarrollo</option>
+            <option value="corporate-services">Servicios Corporativos</option>
+            <option value="labour-employment-law">Derecho Laboral y del Empleo</option>
+            <option value="notary-services">Servicios Notariales</option>
+            <option value="real-estate">Derecho Inmobiliario</option>
+            <option value="rights-entitlement">Derechos y Titularidad</option>
+            <option value="tax-law">Derecho Fiscal</option>
+            <option value="title-search-due-diligence">Búsqueda de Título y Debida Diligencia</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Cuéntenos sobre sus necesidades legales *</label>
+          <textarea id="message" name="message" rows="4" placeholder="Por favor proporcione detalles sobre su situación y cómo podemos ayudarle..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="submit-button">Enviar Mensaje</button>
+        </div>
+      </form>
+</div>
+
+<script>
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.contact-form');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Show loading state
+      const submitButton = form.querySelector('.submit-button');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Enviando...';
+      submitButton.disabled = true;
+
+      // Submit form data as form-encoded (Make.com webhook format)
+      const formData = new FormData(form);
+
+      // Convert FormData to URL-encoded string
+      const urlEncodedData = new URLSearchParams(formData).toString();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: urlEncodedData,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Redirect to thank you page (Spanish version)
+          window.location.href = '/es/gracias.html';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar su mensaje. Por favor intente de nuevo o contáctenos directamente.');
+
+        // Reset button
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
+    });
+  }
+});
+</script>
