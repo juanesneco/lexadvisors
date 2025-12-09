@@ -1,5 +1,11 @@
 // Language Detection and Translations
-const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
+// Check if path starts with /es/ or /es or contains /es/
+function isSpanishPage() {
+  const path = window.location.pathname;
+  return path.startsWith('/es/') || path.startsWith('/es') || path.includes('/es/');
+}
+
+const currentLang = isSpanishPage() ? 'es' : 'en';
 
 // Initialize Language Toggle Switch
 function initLanguageToggle() {
@@ -10,9 +16,7 @@ function initLanguageToggle() {
   const langLinkEs = document.getElementById('lang-link-es');
 
   if (langToggle) {
-    // Detect current language from URL path
-    const path = window.location.pathname;
-    const isSpanish = path.includes('/es/');
+    const isSpanish = isSpanishPage();
 
     // Set initial state based on current language
     // ENG is on the left (default/inactive), ESP is on the right (active)
@@ -28,16 +32,14 @@ function initLanguageToggle() {
 
     // Handle toggle click
     langToggle.addEventListener('click', function() {
-      const isCurrentlySpanish = langToggle.classList.contains('active');
-
-      if (isCurrentlySpanish) {
-        // Switch to English
-        if (langLinkEn) {
+      if (isSpanish) {
+        // Currently Spanish, switch to English
+        if (langLinkEn && langLinkEn.href) {
           window.location.href = langLinkEn.href;
         }
       } else {
-        // Switch to Spanish
-        if (langLinkEs) {
+        // Currently English, switch to Spanish
+        if (langLinkEs && langLinkEs.href) {
           window.location.href = langLinkEs.href;
         }
       }
@@ -171,50 +173,19 @@ function initHeaderScroll() {
 function loadFooter() {
   const footerContainer = document.getElementById('footer-container');
   if (footerContainer) {
-    // Determine the correct path to footer.html based on current page location and language
-    const currentPath = window.location.pathname;
-    const isSpanish = currentPath.includes('/es/');
-    const isInServicesDir = currentPath.includes('/services/');
-    const isInTeamDir = currentPath.includes('/team/');
-
-    let footerPath;
-    if (isSpanish) {
-      // Spanish pages
-      if (isInServicesDir || isInTeamDir) {
-        // For Spanish pages in subdirectories (services or team), footer is one level up
-        footerPath = '../footer.html';
-      } else {
-        // For Spanish root level pages (/es/), footer is in the same directory
-        footerPath = 'footer.html';
-      }
-    } else {
-      // English pages
-      if (isInServicesDir || isInTeamDir) {
-        // For English pages in subdirectories (services or team), footer is one level up
-        footerPath = '../footer.html';
-      } else {
-        // For English root level pages, footer is in the same directory
-        footerPath = 'footer.html';
-      }
-    }
+    // Use absolute paths - Spanish has its own footer, English uses root footer
+    const isSpanish = isSpanishPage();
+    const footerPath = isSpanish ? '/es/footer.html' : '/footer.html';
 
     fetch(footerPath)
       .then(response => response.text())
       .then(html => {
         footerContainer.innerHTML = html;
 
-        // Set logo path after footer is loaded
+        // Set logo path after footer is loaded - use absolute path
         const footerLogo = document.getElementById('footer-logo');
         if (footerLogo) {
-          let logoPath;
-          if (isSpanish) {
-            // Spanish pages - always one level up from /es/
-            logoPath = (isInServicesDir || isInTeamDir) ? '../../files/logos/lex.png' : '../files/logos/lex.png';
-          } else {
-            // English pages
-            logoPath = (isInServicesDir || isInTeamDir) ? '../files/logos/lex.png' : 'files/logos/lex.png';
-          }
-          footerLogo.src = logoPath;
+          footerLogo.src = '/files/logos/lex.png';
         }
       })
       .catch(error => {
@@ -227,32 +198,13 @@ function loadFooter() {
 function loadHeader() {
   const headerContainer = document.getElementById('header-container');
   if (headerContainer) {
-    // Determine the correct path to header.html based on current page location and language
     const currentPath = window.location.pathname;
-    const isSpanish = currentPath.includes('/es/');
+    const isSpanish = isSpanishPage();
     const isInServicesDir = currentPath.includes('/services/');
     const isInTeamDir = currentPath.includes('/team/');
 
-    let headerPath;
-    if (isSpanish) {
-      // Spanish pages
-      if (isInServicesDir || isInTeamDir) {
-        // For Spanish pages in subdirectories (services or team), header is one level up
-        headerPath = '../header.html';
-      } else {
-        // For Spanish root level pages (/es/), header is in the same directory
-        headerPath = 'header.html';
-      }
-    } else {
-      // English pages
-      if (isInServicesDir || isInTeamDir) {
-        // For English pages in subdirectories (services or team), header is one level up
-        headerPath = '../header.html';
-      } else {
-        // For English root level pages, header is in the same directory
-        headerPath = 'header.html';
-      }
-    }
+    // Use absolute paths to ensure correct header is loaded
+    const headerPath = isSpanish ? '/es/header.html' : '/header.html';
 
     fetch(headerPath)
       .then(response => response.text())
@@ -267,39 +219,20 @@ function loadHeader() {
         const navTeam = document.getElementById('nav-team');
         const navContact = document.getElementById('nav-contact');
 
-        // Determine base paths
-        let logoPath, homePath, servicesPath, teamPath, contactPath;
+        // Use absolute paths for all navigation
+        const logoPath = '/files/logos/lex.png';
+        let homePath, servicesPath, teamPath, contactPath;
 
         if (isSpanish) {
-          // Spanish pages
-          if (isInServicesDir || isInTeamDir) {
-            logoPath = '../../files/logos/lex.png';
-            homePath = '../index.html';
-            servicesPath = '../services.html';
-            teamPath = '../team.html';
-            contactPath = '../contact.html';
-          } else {
-            logoPath = '../files/logos/lex.png';
-            homePath = 'index.html';
-            servicesPath = 'services.html';
-            teamPath = 'team.html';
-            contactPath = 'contact.html';
-          }
+          homePath = '/es/index.html';
+          servicesPath = '/es/services.html';
+          teamPath = '/es/team.html';
+          contactPath = '/es/contact.html';
         } else {
-          // English pages
-          if (isInServicesDir || isInTeamDir) {
-            logoPath = '../files/logos/lex.png';
-            homePath = '../index.html';
-            servicesPath = '../services.html';
-            teamPath = '../team.html';
-            contactPath = '../contact.html';
-          } else {
-            logoPath = 'files/logos/lex.png';
-            homePath = 'index.html';
-            servicesPath = 'services.html';
-            teamPath = 'team.html';
-            contactPath = 'contact.html';
-          }
+          homePath = '/index.html';
+          servicesPath = '/services.html';
+          teamPath = '/team.html';
+          contactPath = '/contact.html';
         }
 
         // Set paths
@@ -375,32 +308,9 @@ function loadHeader() {
 function loadContactForm() {
   const contactFormContainer = document.getElementById('contact-form-container');
   if (contactFormContainer) {
-    // Determine the correct path to contact-form.html based on current page location and language
-    const currentPath = window.location.pathname;
-    const isSpanish = currentPath.includes('/es/');
-    const isInServicesDir = currentPath.includes('/services/');
-    const isInTeamDir = currentPath.includes('/team/');
-
-    let contactFormPath;
-    if (isSpanish) {
-      // Spanish pages
-      if (isInServicesDir || isInTeamDir) {
-        // For Spanish pages in subdirectories (services or team), contact form is one level up
-        contactFormPath = '../contact-form.html';
-      } else {
-        // For Spanish root level pages (/es/), contact form is in the same directory
-        contactFormPath = 'contact-form.html';
-      }
-    } else {
-      // English pages
-      if (isInServicesDir || isInTeamDir) {
-        // For English pages in subdirectories (services or team), contact form is one level up
-        contactFormPath = '../contact-form.html';
-      } else {
-        // For English root level pages, contact form is in the same directory
-        contactFormPath = 'contact-form.html';
-      }
-    }
+    // Use absolute paths for contact form
+    const isSpanish = isSpanishPage();
+    const contactFormPath = isSpanish ? '/es/contact-form.html' : '/contact-form.html';
 
     fetch(contactFormPath)
       .then(response => response.text())
