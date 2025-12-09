@@ -1,18 +1,18 @@
 // Language Detection and Translations
 const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
 
-// Language Toggle Switch Functionality
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize Language Toggle Switch
+function initLanguageToggle() {
   const langToggle = document.getElementById('lang-toggle');
   const langLabel = document.getElementById('lang-label');
   const langLinkEn = document.getElementById('lang-link-en');
   const langLinkEs = document.getElementById('lang-link-es');
-  
+
   if (langToggle && langLabel) {
     // Detect current language from URL path
     const path = window.location.pathname;
     const isSpanish = path.includes('/es/');
-    
+
     // Set initial state based on current language
     if (isSpanish) {
       langToggle.classList.add('active');
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
       langToggle.classList.remove('active');
       langLabel.textContent = 'EN';
     }
-    
+
     // Handle toggle click
     langToggle.addEventListener('click', function() {
       const isCurrentlySpanish = langToggle.classList.contains('active');
-      
+
       if (isCurrentlySpanish) {
         // Switch to English
         if (langLinkEn) {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-    
+
     // Handle keyboard navigation
     langToggle.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-});
+}
 
 const translations = {
   en: {
@@ -70,32 +70,34 @@ const translations = {
 
 const t = translations[currentLang];
 
-// Mobile menu toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mainNavigation = document.querySelector('.main-navigation');
+// Initialize Mobile Menu Toggle
+function initMobileMenu() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNavigation = document.querySelector('.main-navigation');
 
-if (mobileMenuToggle && mainNavigation) {
-  mobileMenuToggle.addEventListener('click', () => {
-    mobileMenuToggle.classList.toggle('active');
-    mainNavigation.classList.toggle('mobile-open');
-  });
-  
-  // Close mobile menu when clicking on a link
-  const navLinks = mainNavigation.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenuToggle.classList.remove('active');
-      mainNavigation.classList.remove('mobile-open');
+  if (mobileMenuToggle && mainNavigation) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mainNavigation.classList.toggle('mobile-open');
     });
-  });
-  
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileMenuToggle.contains(e.target) && !mainNavigation.contains(e.target)) {
-      mobileMenuToggle.classList.remove('active');
-      mainNavigation.classList.remove('mobile-open');
-    }
-  });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = mainNavigation.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mainNavigation.classList.remove('mobile-open');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mainNavigation.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mainNavigation.classList.remove('mobile-open');
+      }
+    });
+  }
 }
 
 // Contact form validation and feedback
@@ -141,22 +143,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Header scroll effect
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-  // Ensure header is always opaque on load
-  siteHeader.style.background = '#fff';
-  siteHeader.style.backdropFilter = 'none';
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      siteHeader.style.background = '#fff';
-      siteHeader.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-      siteHeader.style.background = '#fff';
-      siteHeader.style.boxShadow = 'none';
-    }
-  });
+// Initialize Header Scroll Effect
+function initHeaderScroll() {
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    // Ensure header is always opaque on load
+    siteHeader.style.background = '#fff';
+    siteHeader.style.backdropFilter = 'none';
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        siteHeader.style.background = '#fff';
+        siteHeader.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        siteHeader.style.background = '#fff';
+        siteHeader.style.boxShadow = 'none';
+      }
+    });
+  }
 } 
 
 // Footer Loading Functionality
@@ -211,6 +215,116 @@ function loadFooter() {
       })
       .catch(error => {
         console.error('Error loading footer:', error);
+      });
+  }
+}
+
+// Header Loading Functionality
+function loadHeader() {
+  const headerContainer = document.getElementById('header-container');
+  if (headerContainer) {
+    // Determine the correct path to header.html based on current page location and language
+    const currentPath = window.location.pathname;
+    const isSpanish = currentPath.includes('/es/');
+    const isInServicesDir = currentPath.includes('/services/');
+    const isInTeamDir = currentPath.includes('/team/');
+
+    let headerPath;
+    if (isSpanish) {
+      // Spanish pages
+      if (isInServicesDir || isInTeamDir) {
+        // For Spanish pages in subdirectories (services or team), header is one level up
+        headerPath = '../header.html';
+      } else {
+        // For Spanish root level pages (/es/), header is in the same directory
+        headerPath = 'header.html';
+      }
+    } else {
+      // English pages
+      if (isInServicesDir || isInTeamDir) {
+        // For English pages in subdirectories (services or team), header is one level up
+        headerPath = '../header.html';
+      } else {
+        // For English root level pages, header is in the same directory
+        headerPath = 'header.html';
+      }
+    }
+
+    fetch(headerPath)
+      .then(response => response.text())
+      .then(html => {
+        headerContainer.innerHTML = html;
+
+        // Set paths after header is loaded
+        const headerLogoLink = document.getElementById('header-logo-link');
+        const headerLogoImg = document.getElementById('header-logo-img');
+        const navHome = document.getElementById('nav-home');
+        const navServices = document.getElementById('nav-services');
+        const navTeam = document.getElementById('nav-team');
+        const navContact = document.getElementById('nav-contact');
+
+        // Determine base paths
+        let logoPath, homePath, servicesPath, teamPath, contactPath;
+
+        if (isSpanish) {
+          // Spanish pages
+          if (isInServicesDir || isInTeamDir) {
+            logoPath = '../../files/logos/lex.png';
+            homePath = '../index.html';
+            servicesPath = '../services.html';
+            teamPath = '../team.html';
+            contactPath = '../contact.html';
+          } else {
+            logoPath = '../files/logos/lex.png';
+            homePath = 'index.html';
+            servicesPath = 'services.html';
+            teamPath = 'team.html';
+            contactPath = 'contact.html';
+          }
+        } else {
+          // English pages
+          if (isInServicesDir || isInTeamDir) {
+            logoPath = '../files/logos/lex.png';
+            homePath = '../index.html';
+            servicesPath = '../services.html';
+            teamPath = '../team.html';
+            contactPath = '../contact.html';
+          } else {
+            logoPath = 'files/logos/lex.png';
+            homePath = 'index.html';
+            servicesPath = 'services.html';
+            teamPath = 'team.html';
+            contactPath = 'contact.html';
+          }
+        }
+
+        // Set paths
+        if (headerLogoLink) headerLogoLink.href = homePath;
+        if (headerLogoImg) headerLogoImg.src = logoPath;
+        if (navHome) navHome.href = homePath;
+        if (navServices) navServices.href = servicesPath;
+        if (navTeam) navTeam.href = teamPath;
+        if (navContact) navContact.href = contactPath;
+
+        // Set active state based on current page
+        const pageName = currentPath.split('/').pop() || 'index.html';
+        if (pageName === 'index.html' || pageName === '') {
+          if (navHome) navHome.classList.add('active');
+        } else if (pageName === 'services.html' || isInServicesDir) {
+          if (navServices) navServices.classList.add('active');
+        } else if (pageName === 'team.html' || isInTeamDir) {
+          if (navTeam) navTeam.classList.add('active');
+        } else if (pageName === 'contact.html') {
+          if (navContact) navContact.classList.add('active');
+        }
+
+        // Initialize header-related functionality after header is loaded
+        initLanguageToggle();
+        initMobileMenu();
+        initHeaderScroll();
+      })
+      .catch(error => {
+        console.error('Error loading header:', error);
       });
   }
 }
@@ -340,10 +454,11 @@ function initServicesCarousel() {
 
 // CV Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Load footer and contact form
+  // Load header, footer and contact form
+  loadHeader();
   loadFooter();
   loadContactForm();
-  
+
   // Initialize services carousel
   initServicesCarousel();
   

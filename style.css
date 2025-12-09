@@ -108,13 +108,18 @@ p, span, div, a, button, input, textarea, select, label {
   justify-content: space-between;
   height: 80px;
   gap: 1rem;
+  overflow: visible;
+  position: relative;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  flex: 0 1 auto;
+  max-width: none;
 }
 
 .logo-link {
@@ -152,6 +157,7 @@ p, span, div, a, button, input, textarea, select, label {
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .logo-tagline {
@@ -256,6 +262,8 @@ p, span, div, a, button, input, textarea, select, label {
   padding: 0.5rem;
   gap: 4px;
   z-index: 1001;
+  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .mobile-menu-toggle span {
@@ -279,13 +287,23 @@ p, span, div, a, button, input, textarea, select, label {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Right side header elements wrapper */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  flex: 0 0 auto;
+}
+
 /* Language Switcher with Toggle */
 .language-switcher {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   z-index: 1001;
-  margin-left: 1rem;
+  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .language-switcher-wrapper {
@@ -346,11 +364,6 @@ p, span, div, a, button, input, textarea, select, label {
 
 /* Mobile adjustments for language switcher */
 @media (max-width: 900px) {
-  .language-switcher {
-    margin-left: 0.25rem;
-    gap: 0.5rem;
-  }
-
   .language-switcher-wrapper {
     padding: 0.15rem 0.35rem;
   }
@@ -1699,28 +1712,47 @@ p, span, div, a, button, input, textarea, select, label {
 
 @media (max-width: 900px) {
   .header-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     gap: 0.5rem;
+    min-width: 0;
   }
 
   .logo-img {
-    height: 32px;
+    height: 40px !important;
+    width: auto !important;
   }
 
   .logo-main {
-    font-size: 0.8rem;
+    font-size: 1rem !important;
   }
 
   .logo-tagline {
-    font-size: 0.55rem;
+    font-size: 0.65rem !important;
   }
 
   .logo-area {
-    gap: 0.35rem;
+    gap: 0.5rem;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: calc(100% - 150px);
   }
 
   .logo-link {
-    gap: 0.35rem;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .logo-text {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .header-right {
+    gap: 0.4rem;
+  }
+
+  .language-switcher {
+    gap: 0.5rem;
   }
   
   .main-navigation {
@@ -2018,8 +2050,9 @@ p, span, div, a, button, input, textarea, select, label {
 
 @media (max-width: 600px) {
   .header-container {
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
     height: 70px;
+    gap: 0.5rem;
   }
   
   body {
@@ -2027,15 +2060,26 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .logo-img {
-    height: 30px;
+    height: 35px !important;
+    width: auto !important;
   }
   
   .logo-main {
-    font-size: 0.95rem;
+    font-size: 0.9rem !important;
   }
   
   .logo-tagline {
-    font-size: 0.65rem;
+    font-size: 0.65rem !important;
+  }
+
+  .logo-area {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: calc(100% - 150px);
+  }
+
+  .header-right {
+    gap: 0.35rem;
   }
   
   .service-hero-content {
@@ -2474,15 +2518,20 @@ p, span, div, a, button, input, textarea, select, label {
 
 @media (max-width: 480px) {
   .header-container {
-    padding: 0 0.25rem;
+    padding: 0 0.5rem;
+    gap: 0.25rem;
   }
   
   .logo-area {
-    gap: 0.5rem;
+    gap: 0.4rem;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: calc(100% - 145px);
   }
   
   .logo-img {
-    height: 25px;
+    height: 30px !important;
+    width: auto !important;
   }
   
   .hero-arch {
@@ -2491,11 +2540,23 @@ p, span, div, a, button, input, textarea, select, label {
   }
   
   .logo-main {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
   
   .logo-tagline {
-    font-size: 0.6rem;
+    font-size: 0.6rem !important;
+  }
+
+  .header-right {
+    gap: 0.3rem;
+  }
+
+  .language-switcher {
+    gap: 0.4rem;
+  }
+
+  .mobile-menu-toggle {
+    padding: 0.4rem;
   }
   
   .service-hero-content {
@@ -2607,34 +2668,7 @@ p, span, div, a, button, input, textarea, select, label {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Logo Area */
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.5rem 2rem 0.5rem 2rem;
-}
-.logo-img {
-  height: 60px;
-  width: auto;
-  display: inline-block;
-}
-.logo-text {
-  display: inline-block;
-  vertical-align: middle;
-}
-.logo-main {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 2rem;
-  color: var(--color-primary);
-  font-weight: bold;
-  letter-spacing: -0.02em;
-}
-.logo-tagline {
-  font-size: 1rem;
-  color: var(--color-secondary);
-  font-family: 'Times New Roman', Times, serif;
-}
+/* Logo Area - Duplicate rules removed, using main definitions above */
 
 /* Minimal Navigation */
 .minimal-nav {
