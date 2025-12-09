@@ -16,10 +16,10 @@ function initLanguageToggle() {
     // Set initial state based on current language
     if (isSpanish) {
       langToggle.classList.add('active');
-      langLabel.textContent = 'ES';
+      langLabel.textContent = 'ESP';
     } else {
       langToggle.classList.remove('active');
-      langLabel.textContent = 'EN';
+      langLabel.textContent = 'ENG';
     }
 
     // Handle toggle click
@@ -323,8 +323,11 @@ function loadHeader() {
         const langLinkEs = document.getElementById('lang-link-es');
 
         if (langLinkEn && langLinkEs) {
-          // Get the current page filename
-          const currentPageName = currentPath.split('/').pop() || 'index.html';
+          // Get the current page filename (handle empty or just slash)
+          let currentPageName = currentPath.split('/').pop();
+          if (!currentPageName || currentPageName === '' || currentPageName === 'es') {
+            currentPageName = 'index.html';
+          }
 
           if (isSpanish) {
             // Currently on Spanish page - set links to switch to English
