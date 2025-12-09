@@ -4,22 +4,26 @@ const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
 // Initialize Language Toggle Switch
 function initLanguageToggle() {
   const langToggle = document.getElementById('lang-toggle');
-  const langLabel = document.getElementById('lang-label');
+  const langLabelLeft = document.querySelector('.language-label-left');
+  const langLabelRight = document.querySelector('.language-label-right');
   const langLinkEn = document.getElementById('lang-link-en');
   const langLinkEs = document.getElementById('lang-link-es');
 
-  if (langToggle && langLabel) {
+  if (langToggle) {
     // Detect current language from URL path
     const path = window.location.pathname;
     const isSpanish = path.includes('/es/');
 
     // Set initial state based on current language
+    // ENG is on the left (default/inactive), ESP is on the right (active)
     if (isSpanish) {
       langToggle.classList.add('active');
-      langLabel.textContent = 'ESP';
+      if (langLabelLeft) langLabelLeft.classList.remove('active');
+      if (langLabelRight) langLabelRight.classList.add('active');
     } else {
       langToggle.classList.remove('active');
-      langLabel.textContent = 'ENG';
+      if (langLabelLeft) langLabelLeft.classList.add('active');
+      if (langLabelRight) langLabelRight.classList.remove('active');
     }
 
     // Handle toggle click
