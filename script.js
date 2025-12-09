@@ -1,6 +1,54 @@
 // Language Detection and Translations
 const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
 
+// Language Toggle Switch Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const langToggle = document.getElementById('lang-toggle');
+  const langLabel = document.getElementById('lang-label');
+  const langLinkEn = document.getElementById('lang-link-en');
+  const langLinkEs = document.getElementById('lang-link-es');
+  
+  if (langToggle && langLabel) {
+    // Detect current language from URL path
+    const path = window.location.pathname;
+    const isSpanish = path.includes('/es/');
+    
+    // Set initial state based on current language
+    if (isSpanish) {
+      langToggle.classList.add('active');
+      langLabel.textContent = 'ES';
+    } else {
+      langToggle.classList.remove('active');
+      langLabel.textContent = 'EN';
+    }
+    
+    // Handle toggle click
+    langToggle.addEventListener('click', function() {
+      const isCurrentlySpanish = langToggle.classList.contains('active');
+      
+      if (isCurrentlySpanish) {
+        // Switch to English
+        if (langLinkEn) {
+          window.location.href = langLinkEn.href;
+        }
+      } else {
+        // Switch to Spanish
+        if (langLinkEs) {
+          window.location.href = langLinkEs.href;
+        }
+      }
+    });
+    
+    // Handle keyboard navigation
+    langToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        langToggle.click();
+      }
+    });
+  }
+});
+
 const translations = {
   en: {
     formErrorAllFields: 'Please fill in all fields.',
