@@ -318,6 +318,41 @@ function loadHeader() {
           if (navContact) navContact.classList.add('active');
         }
 
+        // Set language switcher links dynamically
+        const langLinkEn = document.getElementById('lang-link-en');
+        const langLinkEs = document.getElementById('lang-link-es');
+
+        if (langLinkEn && langLinkEs) {
+          // Get the current page filename
+          const currentPageName = currentPath.split('/').pop() || 'index.html';
+
+          if (isSpanish) {
+            // Currently on Spanish page - set links to switch to English
+            if (isInServicesDir) {
+              langLinkEn.href = '/services/' + currentPageName;
+              langLinkEs.href = '/es/services/' + currentPageName;
+            } else if (isInTeamDir) {
+              langLinkEn.href = '/team/' + currentPageName;
+              langLinkEs.href = '/es/team/' + currentPageName;
+            } else {
+              langLinkEn.href = '/' + currentPageName;
+              langLinkEs.href = '/es/' + currentPageName;
+            }
+          } else {
+            // Currently on English page - set links to switch to Spanish
+            if (isInServicesDir) {
+              langLinkEn.href = '/services/' + currentPageName;
+              langLinkEs.href = '/es/services/' + currentPageName;
+            } else if (isInTeamDir) {
+              langLinkEn.href = '/team/' + currentPageName;
+              langLinkEs.href = '/es/team/' + currentPageName;
+            } else {
+              langLinkEn.href = '/' + currentPageName;
+              langLinkEs.href = '/es/' + currentPageName;
+            }
+          }
+        }
+
         // Initialize header-related functionality after header is loaded
         initLanguageToggle();
         initMobileMenu();
