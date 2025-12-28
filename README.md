@@ -8,66 +8,75 @@ This is a modern, responsive, bilingual website (English/Spanish) built with HTM
 
 ## Features
 
-- **Bilingual Support**: Full English and Spanish versions with language toggle
+- **Bilingual Support**: Full English (`/en/`) and Spanish (`/es/`) versions with language toggle
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Dynamic Components**: Header, footer, and contact form loaded via JavaScript
 - **Services Showcase**: Comprehensive display of 11 legal services with detailed descriptions
-- **Team Profiles**: Interactive team member cards with CV popups
+- **Team Profiles**: Interactive team member cards with detailed information
 - **Impact Metrics**: Visual representation of firm achievements and statistics
 - **Contact Forms**: Easy-to-use contact forms for client inquiries
 
 ## Project Structure
 
+See [tree.md](tree.md) for the complete file structure.
+
 ```
 lexadvisors/
-├── index.html              # English home page
-├── services.html           # English services listing
-├── team.html               # English team page
-├── contact.html            # English contact page
-├── thank-you.html          # English thank you page
-├── header.html             # English header component (loaded via JS)
-├── footer.html             # Footer component (shared)
-├── contact-form.html       # English contact form component
+├── index.html              # Root redirect → /en/index.html
 ├── style.css               # Main stylesheet
 ├── script.js               # JavaScript functionality
+├── tree.md                 # Complete file structure
+│
+├── en/                     # English version
+│   ├── index.html          # Home page
+│   ├── services.html       # Services listing
+│   ├── team.html           # Team page
+│   ├── contact.html        # Contact page
+│   ├── header.html         # Header component (loaded via JS)
+│   ├── footer.html         # Footer component (loaded via JS)
+│   ├── contact-form.html   # Contact form component
+│   ├── services/           # Individual service pages (11 pages)
+│   └── team/               # Individual team member pages
 │
 ├── es/                     # Spanish version (mirrors English structure)
-│   ├── index.html          # Spanish home page
-│   ├── services.html       # Spanish services listing
-│   ├── team.html           # Spanish team page
-│   ├── contact.html        # Spanish contact page
-│   ├── thank-you.html      # Spanish thank you page
-│   ├── header.html         # Spanish header component
-│   ├── contact-form.html   # Spanish contact form component
-│   ├── services/           # Spanish individual service pages
-│   └── team/               # Spanish individual team member pages
+│   ├── index.html          # Página principal
+│   ├── services.html       # Lista de servicios
+│   ├── team.html           # Página del equipo
+│   ├── contact.html        # Página de contacto
+│   ├── header.html         # Componente de encabezado
+│   ├── footer.html         # Componente de pie de página
+│   ├── contact-form.html   # Componente de formulario
+│   ├── services/           # Páginas de servicios individuales
+│   └── team/               # Páginas de miembros del equipo
 │
-├── services/               # English individual service pages
-│   ├── real-estate-law.html
-│   ├── corporate.html
-│   ├── tax-law.html
-│   └── ... (11 service pages)
+├── files/                  # Static assets
+│   ├── images/
+│   │   ├── team/           # Team member photos
+│   │   │   └── Profile/    # Profile photos used on website
+│   │   ├── services/       # Service-related images
+│   │   ├── general/        # General site images
+│   │   └── developments/   # Development project images
+│   └── logos/              # Logo files
 │
-├── team/                   # English individual team member pages
-│
-└── files/
-    ├── images/
-    │   ├── team/           # Team member photos
-    │   ├── services/       # Service-related images
-    │   ├── general/        # General site images
-    │   └── developments/   # Development project images
-    ├── logos/              # Logo files
-    └── cv/                 # Team member CV HTML files
+└── not-used/               # Archived/unused files
 ```
 
 ## Architecture
 
+### Bilingual Folder Structure
+
+The website uses a symmetric folder structure for both languages:
+
+- **English**: `/en/` - All English pages and components
+- **Spanish**: `/es/` - All Spanish pages and components
+- **Root**: `index.html` redirects to `/en/index.html` by default
+
 ### Dynamic Component Loading
 
-The website uses JavaScript to dynamically load reusable components, reducing code duplication:
+The website uses JavaScript to dynamically load reusable components:
 
-- **Header** (`loadHeader()`): Loads the appropriate header based on language and sets navigation paths dynamically
-- **Footer** (`loadFooter()`): Loads the shared footer component
+- **Header** (`loadHeader()`): Loads the appropriate header based on language
+- **Footer** (`loadFooter()`): Loads the language-specific footer
 - **Contact Form** (`loadContactForm()`): Loads the language-appropriate contact form
 
 Each page includes container divs that are populated at runtime:
@@ -81,7 +90,7 @@ Each page includes container divs that are populated at runtime:
 
 The language toggle switch in the header allows users to switch between English and Spanish:
 
-- **URL Structure**: English pages are at root (`/`), Spanish pages are under `/es/`
+- **URL Structure**: English pages at `/en/`, Spanish pages at `/es/`
 - **Detection**: JavaScript detects the current language from the URL path
 - **Navigation**: The toggle navigates to the equivalent page in the other language
 - **Visual State**: Toggle position indicates current language (left=ENG, right=ESP)
@@ -92,11 +101,11 @@ The `script.js` file handles dynamic path resolution for:
 - Logo images
 - Navigation links
 - Language switcher links
-- Footer logo
+- Component paths (header, footer, contact form)
 
 Paths are calculated based on:
 1. Current language (English vs Spanish)
-2. Current directory (root, services/, team/)
+2. Current directory depth (root, services/, team/)
 
 ## Technologies Used
 
@@ -161,7 +170,7 @@ The website will be available at `http://localhost:3000`
 - Leadership team with detailed profiles
 - Legal team members
 - Administrative team
-- Interactive CV popup functionality
+- Interactive profile information
 
 ## Design System
 
@@ -181,22 +190,22 @@ The website will be available at `http://localhost:3000`
 ## Making Changes
 
 ### To update the header:
-Edit `header.html` (English) and `es/header.html` (Spanish). Changes will apply to all pages automatically.
+Edit `en/header.html` (English) and `es/header.html` (Spanish). Changes will apply to all pages automatically.
 
 ### To update the footer:
-Edit `footer.html`. Changes will apply to all pages.
+Edit `en/footer.html` (English) and `es/footer.html` (Spanish). Changes will apply to all pages.
 
 ### To add a new page:
-1. Create the English version in the root directory
+1. Create the English version in `/en/`
 2. Create the Spanish version in `/es/`
 3. Include the header, footer, and contact form containers
 4. Add `<link rel="alternate" hreflang="...">` tags for SEO
 
 ### To add a new service:
-1. Create English page in `/services/`
+1. Create English page in `/en/services/`
 2. Create Spanish page in `/es/services/`
-3. Update the services carousel in both `index.html` files
-4. Update the services grid in both `services.html` files
+3. Update the services carousel in both `en/index.html` and `es/index.html`
+4. Update the services grid in both `en/services.html` and `es/services.html`
 
 ## Browser Support
 
@@ -207,7 +216,7 @@ Edit `footer.html`. Changes will apply to all pages.
 
 ## License
 
-Copyright © Lex Advisors. All rights reserved.
+Copyright Lex Advisors. All rights reserved.
 
 ## Contact
 

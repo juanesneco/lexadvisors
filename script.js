@@ -175,7 +175,7 @@ function loadFooter() {
   if (footerContainer) {
     // Use absolute paths - Spanish has its own footer, English uses root footer
     const isSpanish = isSpanishPage();
-    const footerPath = isSpanish ? '/es/footer.html' : '/footer.html';
+    const footerPath = isSpanish ? '/es/footer.html' : '/en/footer.html';
 
     fetch(footerPath)
       .then(response => response.text())
@@ -204,7 +204,7 @@ function loadHeader() {
     const isInTeamDir = currentPath.includes('/team/');
 
     // Use absolute paths to ensure correct header is loaded
-    const headerPath = isSpanish ? '/es/header.html' : '/header.html';
+    const headerPath = isSpanish ? '/es/header.html' : '/en/header.html';
 
     fetch(headerPath)
       .then(response => response.text())
@@ -229,10 +229,10 @@ function loadHeader() {
           teamPath = '/es/team.html';
           contactPath = '/es/contact.html';
         } else {
-          homePath = '/index.html';
-          servicesPath = '/services.html';
-          teamPath = '/team.html';
-          contactPath = '/contact.html';
+          homePath = '/en/index.html';
+          servicesPath = '/en/services.html';
+          teamPath = '/en/team.html';
+          contactPath = '/en/contact.html';
         }
 
         // Set paths
@@ -262,32 +262,32 @@ function loadHeader() {
         if (langLinkEn && langLinkEs) {
           // Get the current page filename (handle empty or just slash)
           let currentPageName = currentPath.split('/').pop();
-          if (!currentPageName || currentPageName === '' || currentPageName === 'es') {
+          if (!currentPageName || currentPageName === '' || currentPageName === 'es' || currentPageName === 'en') {
             currentPageName = 'index.html';
           }
 
           if (isSpanish) {
             // Currently on Spanish page - set links to switch to English
             if (isInServicesDir) {
-              langLinkEn.href = '/services/' + currentPageName;
+              langLinkEn.href = '/en/services/' + currentPageName;
               langLinkEs.href = '/es/services/' + currentPageName;
             } else if (isInTeamDir) {
-              langLinkEn.href = '/team/' + currentPageName;
+              langLinkEn.href = '/en/team/' + currentPageName;
               langLinkEs.href = '/es/team/' + currentPageName;
             } else {
-              langLinkEn.href = '/' + currentPageName;
+              langLinkEn.href = '/en/' + currentPageName;
               langLinkEs.href = '/es/' + currentPageName;
             }
           } else {
             // Currently on English page - set links to switch to Spanish
             if (isInServicesDir) {
-              langLinkEn.href = '/services/' + currentPageName;
+              langLinkEn.href = '/en/services/' + currentPageName;
               langLinkEs.href = '/es/services/' + currentPageName;
             } else if (isInTeamDir) {
-              langLinkEn.href = '/team/' + currentPageName;
+              langLinkEn.href = '/en/team/' + currentPageName;
               langLinkEs.href = '/es/team/' + currentPageName;
             } else {
-              langLinkEn.href = '/' + currentPageName;
+              langLinkEn.href = '/en/' + currentPageName;
               langLinkEs.href = '/es/' + currentPageName;
             }
           }
@@ -310,7 +310,7 @@ function loadContactForm() {
   if (contactFormContainer) {
     // Use absolute paths for contact form
     const isSpanish = isSpanishPage();
-    const contactFormPath = isSpanish ? '/es/contact-form.html' : '/contact-form.html';
+    const contactFormPath = isSpanish ? '/es/contact-form.html' : '/en/contact-form.html';
 
     fetch(contactFormPath)
       .then(response => response.text())
