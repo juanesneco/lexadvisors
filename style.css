@@ -5780,8 +5780,8 @@ main h1 {
 }
 
 .banner-portrait {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 390px;
   object-fit: cover;
   object-position: center top;
   border-radius: 12px;
@@ -5816,8 +5816,8 @@ main h1 {
   }
   
   .banner-portrait {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 338px;
   }
 }
 
@@ -5850,8 +5850,8 @@ main h1 {
 
   
   .banner-portrait {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 312px;
   }
 }
 
@@ -5895,10 +5895,10 @@ main h1 {
   }
   
   .banner-portrait {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 260px;
   }
-  
+
 
 }
 
@@ -5913,8 +5913,8 @@ main h1 {
   }
   
   .banner-portrait {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 234px;
   }
 }
 
