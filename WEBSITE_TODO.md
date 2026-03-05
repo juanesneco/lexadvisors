@@ -42,10 +42,14 @@
 - [ ] **Carolina Romans** - Create profile page (`/en/team/carolina-romans.html` and `/es/team/carolina-romans.html`)
 
 ### 3. SEO Optimization
-- [ ] Add meta descriptions for all pages
-- [ ] Add Open Graph tags for social sharing
-- [ ] Create XML sitemap
-- [ ] Add structured data markup (Schema.org)
+- [x] Add meta descriptions for all pages (42 pages)
+- [x] Add Open Graph tags for social sharing (42 pages)
+- [x] Create XML sitemap (`sitemap.xml` with 42 bilingual URL entries)
+- [x] Add structured data markup (Schema.org) — JSON-LD on 32 pages (LegalService, Service, Person)
+- [x] Add canonical URLs to all pages
+- [x] Add `robots.txt` with sitemap reference and `/not-used/` disallow
+- [x] Fix hreflang domain from `lexadvisors.com.mx` to `lexadvisorsmx.com`
+- [x] Add `noindex` to thank-you pages (`gracias.html`) and root redirect
 
 ---
 
@@ -84,4 +88,4 @@ See `services/all_services_descriptions.md` for all service content.
 
 ---
 
-**Last Updated:** December 2025
+**Last Updated:** March 2026
