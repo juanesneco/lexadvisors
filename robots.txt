@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /not-used/
+Sitemap: https://lexadvisorsmx.com/sitemap.xml

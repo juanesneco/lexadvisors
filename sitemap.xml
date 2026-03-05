@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/index.html"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/index.html"/>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/about.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/about.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Services Index -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Team Index -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/contact.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/contact.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/privacy.html"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/privacy.html"/>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Service: Real Estate Law -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/real-estate-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/real-estate-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/real-estate-law.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/real-estate-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/real-estate-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/real-estate-law.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Corporate -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/corporate.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/corporate.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/corporate.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/corporate.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/corporate.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/corporate.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Notary Services -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/notary-services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/notary-services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/notary-services.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/notary-services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/notary-services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/notary-services.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Tax Law -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/tax-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/tax-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/tax-law.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/tax-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/tax-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/tax-law.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Construction and Development -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/construction-and-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/construction-and-development.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/construction-and-development.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/construction-and-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/construction-and-development.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/construction-and-development.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Compliance / Anti-Money Laundering / Privacy Law -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/compliance-anti-money-laundering-privacy-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/compliance-anti-money-laundering-privacy-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/compliance-anti-money-laundering-privacy-law.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/compliance-anti-money-laundering-privacy-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/compliance-anti-money-laundering-privacy-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/compliance-anti-money-laundering-privacy-law.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Alternative Dispute Resolution -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/alternative-dispute-resolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/alternative-dispute-resolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/alternative-dispute-resolution.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/alternative-dispute-resolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/alternative-dispute-resolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/alternative-dispute-resolution.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Appraisals -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/appraisals.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/appraisals.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/appraisals.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/appraisals.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/appraisals.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/appraisals.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Labour / Employment Law -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/labour-employment-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/labour-employment-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/labour-employment-law.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/labour-employment-law.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/labour-employment-law.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/labour-employment-law.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Rights & Entitlement -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/rights-entitlement.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/rights-entitlement.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/rights-entitlement.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/rights-entitlement.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/rights-entitlement.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/rights-entitlement.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service: Title Search & Due Diligence -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/services/title-search-due-diligence.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/title-search-due-diligence.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/title-search-due-diligence.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/services/title-search-due-diligence.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/services/title-search-due-diligence.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/services/title-search-due-diligence.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Team: Javier Mazoy -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/team/javier-mazoy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/javier-mazoy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/javier-mazoy.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/team/javier-mazoy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/javier-mazoy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/javier-mazoy.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Team: Luis Espinoza -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/team/luis-espinoza.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/luis-espinoza.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/luis-espinoza.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/team/luis-espinoza.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/luis-espinoza.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/luis-espinoza.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Team: Laura Nava -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/team/laura-nava.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/laura-nava.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/laura-nava.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/team/laura-nava.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/laura-nava.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/laura-nava.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Team: María de Lourdes de la Torre -->
+  <url>
+    <loc>https://lexadvisorsmx.com/en/team/maria-lourdes-de-la-torre.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/maria-lourdes-de-la-torre.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/maria-lourdes-de-la-torre.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexadvisorsmx.com/es/team/maria-lourdes-de-la-torre.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/team/maria-lourdes-de-la-torre.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/team/maria-lourdes-de-la-torre.html"/>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
