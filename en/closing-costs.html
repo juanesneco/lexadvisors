@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing Costs | Lex Advisors</title>
+    <link rel="alternate" hreflang="en" href="https://lexadvisorsmx.com/en/closing-costs.html">
+    <link rel="alternate" hreflang="es" href="https://lexadvisorsmx.com/es/closing-costs.html">
+    <meta name="description" content="Understanding closing costs for real estate transactions in Los Cabos with Lex Advisors.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://lexadvisorsmx.com/en/closing-costs.html">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --lex-navy: #10405A;
+            --lex-navy-dark: #0a2d3f;
+            --lex-secondary: #819DAA;
+            --lex-accent: #ffffff;
+            --lex-accent-muted: #c8cdd0;
+            --lex-cream: #f0f2f4;
+            --lex-text: #414141;
+            --spacing-unit: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.7;
+            color: var(--lex-text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.8rem, 7vw, 5rem); margin-bottom: calc(var(--spacing-unit) * 3); }
+        h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: calc(var(--spacing-unit) * 3); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: calc(var(--spacing-unit) * 2); }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* ================================================
+           SLIDE 1: HERO — Cinematic Opening (shorter)
+           ================================================ */
+        .hero-cinematic {
+            height: 75vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--lex-navy-dark) 0%, var(--lex-navy) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cinematic::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(129, 157, 170, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(129, 157, 170, 0.04) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 3);
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-logo {
+            width: min(180px, 30vw);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            animation: fadeIn 1.5s ease-out 0.3s backwards;
+        }
+
+        .hero-cinematic h1 {
+            color: white;
+            text-shadow: 2px 4px 20px rgba(0,0,0,0.3);
+            animation: fadeInUp 1.2s ease-out 0.5s backwards;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .hero-closing {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--lex-accent);
+            font-weight: 600;
+            margin-top: calc(var(--spacing-unit) * 2);
+            line-height: 1.5;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            animation: fadeInUp 1.2s ease-out 0.7s backwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: calc(var(--spacing-unit) * 4);
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+            transition: opacity 0.4s ease;
+        }
+
+        .scroll-indicator::after {
+            content: '\2193';
+            display: block;
+            margin-top: calc(var(--spacing-unit) * 1);
+            font-size: 1.5rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* ================================================
+           SLIDE 2: DIFFERENTIATORS — Icon Card Grid
+           ================================================ */
+        .differentiators-section {
+            background: #ffffff;
+            padding: calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 3);
+            position: relative;
+        }
+
+        .differentiators-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .differentiators-section h2 {
+            text-align: center;
+            color: var(--lex-navy);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .section-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--lex-navy), var(--lex-secondary));
+            margin: 0 auto calc(var(--spacing-unit) * 6) auto;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .section-line.visible {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .diff-card {
+            background: var(--lex-cream);
+            border: 1px solid #e0e4e7;
+            border-radius: 20px;
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 3);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .diff-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .diff-card:hover {
+            background: #e8ecef;
+            border-color: var(--lex-navy);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .diff-card.visible:hover {
+            transform: translateY(-8px);
+        }
+
+        .diff-card i {
+            font-size: 2.8rem;
+            color: var(--lex-navy);
+            line-height: 1;
+        }
+
+        .diff-card p {
+            font-size: clamp(0.92rem, 1.6vw, 1.02rem);
+            color: var(--lex-text);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Stagger card animations */
+        .diff-card:nth-child(1) { transition-delay: 0.05s; }
+        .diff-card:nth-child(2) { transition-delay: 0.1s; }
+        .diff-card:nth-child(3) { transition-delay: 0.15s; }
+        .diff-card:nth-child(4) { transition-delay: 0.2s; }
+        .diff-card:nth-child(5) { transition-delay: 0.25s; }
+        .diff-card:nth-child(6) { transition-delay: 0.3s; }
+        .diff-card:nth-child(7) { transition-delay: 0.35s; }
+        .diff-card:nth-child(8) { transition-delay: 0.4s; }
+        .diff-card:nth-child(9) { transition-delay: 0.45s; }
+
+
+        /* ================================================
+           SLIDE 3: STATS — Key Metrics
+           ================================================ */
+        .stats-section {
+            padding: calc(var(--spacing-unit) * 15) calc(var(--spacing-unit) * 3);
+            background: linear-gradient(135deg, var(--lex-secondary) 0%, var(--lex-navy) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .stats-content { max-width: 1200px; margin: 0 auto; }
+
+        .stats-section h2 {
+            color: white;
+            margin-bottom: calc(var(--spacing-unit) * 5);
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-item.visible { opacity: 1; transform: translateY(0); }
+        .stat-item:nth-child(1) { transition-delay: 0.1s; }
+        .stat-item:nth-child(2) { transition-delay: 0.2s; }
+        .stat-item:nth-child(3) { transition-delay: 0.3s; }
+        .stat-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .stat-item:hover { transform: scale(1.06); }
+        .stat-item.visible:hover { transform: scale(1.06); }
+
+        .stat-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(3rem, 6vw, 4rem);
+            font-weight: 800;
+            color: #ffffff;
+            display: block;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .stat-label {
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-detail {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: calc(var(--spacing-unit) * 1);
+        }
+
+        /* ================================================
+           SLIDE 4: PRICING — The True Value of Expertise
+           ================================================ */
+        .pricing-section {
+            padding: calc(var(--spacing-unit) * 15) calc(var(--spacing-unit) * 3);
+            background: white;
+        }
+
+        .pricing-content { max-width: 1000px; margin: 0 auto; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 8);
+        }
+
+        .section-header h2 { color: var(--lex-navy); margin-bottom: calc(var(--spacing-unit) * 2); }
+
+        .pricing-intro {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--lex-text);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .pricing-card {
+            background: var(--lex-cream);
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 4);
+            border-radius: 20px;
+            border-left: 6px solid var(--lex-navy);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .pricing-card.visible { opacity: 1; transform: translateY(0); }
+        .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+        .pricing-card:nth-child(2) { transition-delay: 0.2s; }
+        .pricing-card:nth-child(3) { transition-delay: 0.3s; }
+        .pricing-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .pricing-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08), 0 0 30px rgba(16, 64, 90, 0.06);
+            border-left-color: var(--lex-secondary);
+        }
+
+        .pricing-card.visible:hover {
+            transform: translateY(-6px) scale(1.01);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 1.5);
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+            color: var(--lex-navy);
+            flex-shrink: 0;
+        }
+
+        .card-header h3 {
+            color: var(--lex-navy);
+            font-size: 1.3rem;
+            margin-bottom: 0;
+        }
+
+        .pricing-card p { color: #555; line-height: 1.7; font-size: 1.02rem; }
+
+        /* Full-width highlight card */
+        .pricing-card-highlight {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #edf1f4 0%, #e3e9ed 100%);
+            border-left-color: var(--lex-secondary);
+            border-top: 3px solid var(--lex-secondary);
+            position: relative;
+            transition-delay: 0.5s;
+        }
+
+        .pricing-card-highlight .card-header i { color: var(--lex-navy); }
+        .pricing-card-highlight .card-header h3 { color: var(--lex-navy); }
+
+        .pricing-card-highlight:hover {
+            border-left-color: var(--lex-navy);
+            box-shadow: 0 20px 50px rgba(16, 64, 90, 0.12);
+        }
+
+        /* Summary Table */
+        .table-wrapper {
+            margin-top: calc(var(--spacing-unit) * 6);
+            padding-top: calc(var(--spacing-unit) * 6);
+            border-top: 2px solid var(--lex-secondary);
+        }
+
+        .table-title {
+            font-size: 1.6rem;
+            color: var(--lex-navy);
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.05rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .cost-table thead th {
+            background: linear-gradient(135deg, var(--lex-navy) 0%, var(--lex-navy-dark) 100%);
+            color: #fff;
+            padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 3);
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .cost-table thead th:last-child { text-align: right; }
+
+        .cost-table tbody td {
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+            border-bottom: 1px solid #e9ecef;
+            color: var(--lex-text);
+        }
+
+        .cost-table tbody td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--lex-navy);
+            white-space: nowrap;
+        }
+
+        .cost-table tbody tr:nth-child(even) { background: #fdfcf9; }
+
+        .cost-table tbody tr:hover {
+            background: linear-gradient(90deg, var(--lex-cream) 0%, transparent 100%);
+            box-shadow: inset 4px 0 0 var(--lex-navy);
+        }
+
+        .table-note {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-top: calc(var(--spacing-unit) * 2);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ================================================
+           SLIDE 5: TESTIMONIALS — Voices of Trust
+           ================================================ */
+        .testimonials-section {
+            padding: calc(var(--spacing-unit) * 15) calc(var(--spacing-unit) * 3);
+            background: linear-gradient(135deg, var(--lex-navy-dark) 0%, var(--lex-navy) 100%);
+            color: white;
+        }
+
+        .testimonials-content { max-width: 1100px; margin: 0 auto; }
+
+        .testimonials-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            padding: calc(var(--spacing-unit) * 4);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+
+        .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+
+        .testimonial-card:nth-child(1) { transition-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { transition-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { transition-delay: 0.3s; }
+        .testimonial-card:nth-child(4) { transition-delay: 0.4s; }
+        .testimonial-card:nth-child(5) { transition-delay: 0.5s; }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--lex-accent);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12), inset 0 0 40px rgba(255, 255, 255, 0.04);
+        }
+
+        .testimonial-card.visible:hover { transform: translateY(-6px); }
+
+        /* Featured first card: spans 2 rows */
+        .testimonial-card:first-child {
+            grid-row: 1 / 3;
+            padding: calc(var(--spacing-unit) * 5);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-card:first-child blockquote p {
+            font-size: clamp(1.05rem, 1.9vw, 1.2rem);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: calc(var(--spacing-unit) * 2);
+            left: calc(var(--spacing-unit) * 3);
+            font-size: 4.5rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 0.8;
+            font-weight: 700;
+        }
+
+        .testimonial-card:first-child::before {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .testimonial-card blockquote { margin: 0; padding: 0; }
+
+        .testimonial-card blockquote p {
+            font-size: clamp(0.95rem, 1.7vw, 1.05rem);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .testimonial-author {
+            margin-top: calc(var(--spacing-unit) * 2.5);
+            padding-top: calc(var(--spacing-unit) * 2);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testimonial-author strong { font-size: 1.05rem; color: var(--lex-accent); }
+        .testimonial-author span { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
+
+        /* ================================================
+           CLOSING THOUGHTS — Cream transition
+           ================================================ */
+        .closing-section {
+            background: var(--lex-cream);
+            padding: calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 3);
+            text-align: center;
+            position: relative;
+        }
+
+        .closing-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lex-navy) 0%, var(--lex-secondary) 100%);
+        }
+
+        .closing-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .closing-section h2 {
+            color: var(--lex-navy);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .closing-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--lex-text);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .closing-text strong {
+            color: var(--lex-navy);
+        }
+
+        /* ================================================
+           FOOTER
+           ================================================ */
+        .presentation-footer {
+            background: var(--lex-navy-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .presentation-footer::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(129, 157, 170, 0.08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: rotatingSpotlight 15s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes rotatingSpotlight {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(80px); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(80px); }
+        }
+
+        .footer-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+
+        .footer-logo {
+            width: 120px;
+                        opacity: 0.8;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .footer-tagline {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--lex-accent);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .footer-cta {
+            font-size: clamp(1.15rem, 2vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .footer-info {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-info a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info a:hover { color: var(--lex-accent); }
+
+        .footer-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--lex-secondary) 20%, var(--lex-secondary) 80%, transparent 100%);
+            margin: calc(var(--spacing-unit) * 4) auto;
+            opacity: 0.7;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* ================================================
+           SLIDE COUNTER
+           ================================================ */
+        .slide-counter {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 100;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .slide-counter .current {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* ================================================
+           LANGUAGE SWITCHER
+           ================================================ */
+        .lang-switcher {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 100;
+            display: flex;
+            gap: 0;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.2);
+            transition: border-color 0.3s ease;
+        }
+
+        .lang-switcher:hover {
+            border-color: var(--lex-accent);
+        }
+
+        .lang-switcher a {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .lang-switcher a.active {
+            background: var(--lex-navy);
+            color: white;
+        }
+
+        .lang-switcher a:not(.active):hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Dark mode for lang switcher on light backgrounds */
+        .lang-switcher.on-light {
+            background: rgba(255,255,255,0.85);
+            border-color: #d0d4d8;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-switcher.on-light a {
+            color: var(--lex-secondary);
+        }
+
+        .lang-switcher.on-light a.active {
+            background: var(--lex-navy);
+            color: white;
+        }
+
+        .lang-switcher.on-light a:not(.active):hover {
+            color: var(--lex-navy);
+            background: rgba(16,64,90,0.06);
+        }
+
+        .lang-switcher.on-light:hover {
+            border-color: var(--lex-navy);
+        }
+
+        /* ================================================
+           CUSTOM SCROLLBAR
+           ================================================ */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--lex-cream); }
+        ::-webkit-scrollbar-thumb { background: var(--lex-secondary); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--lex-navy); }
+
+        /* ================================================
+           RESPONSIVE
+           ================================================ */
+        @media (max-width: 900px) {
+            .diff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card-highlight {
+                grid-column: 1;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card:first-child {
+                grid-row: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diff-card {
+                padding: calc(var(--spacing-unit) * 3);
+            }
+
+            .hero-cinematic {
+                height: auto;
+                min-height: 60vh;
+                padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 8);
+            }
+
+            .cost-table thead th,
+            .cost-table tbody td {
+                padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+                font-size: 0.92rem;
+            }
+
+            .cost-table tbody td:last-child { white-space: normal; }
+
+            .slide-counter { bottom: 16px; right: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="../en/closing-costs.html" class="active">ENG</a>
+        <a href="../es/closing-costs.html">ESP</a>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter"><span class="current">1</span> / 7</div>
+
+    <!-- SLIDE 1: Hero -->
+    <section class="hero-cinematic">
+        <div class="hero-content">
+            <img src="../files/logos/isotipo_white.png" alt="Lex Advisors" class="hero-logo">
+            <h1>The Lex Advisors<br>Difference</h1>
+            <p class="hero-closing">"We know the worth of our work — and we will make sure you know it too."</p>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- SLIDE 2: Differentiators -->
+    <section class="differentiators-section">
+        <div class="differentiators-wrapper">
+            <h2>What Sets Us Apart</h2>
+            <div class="section-line"></div>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <i class="ph ph-calendar-plus"></i>
+                    <p>Nearly 30 years of trusted legal expertise in Los Cabos</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-buildings"></i>
+                    <p>Real estate closings overseen by specialized attorneys</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-currency-dollar"></i>
+                    <p>Over USD $3 billion in residential transactions closed</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-rocket-launch"></i>
+                    <p>Pioneers: introduced escrow to Baja in the 1990s</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-blueprint"></i>
+                    <p>Legal architects of Mexico's first touristic fractional</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-handshake"></i>
+                    <p>Strategic alliances with top Mexico City law firms</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-globe-hemisphere-west"></i>
+                    <p>Locally rooted, globally trained attorneys</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-heart"></i>
+                    <p>10% of our time dedicated to pro bono work</p>
+                </div>
+                <div class="diff-card">
+                    <i class="ph ph-seal-check"></i>
+                    <p>Uncompromising ethics and values</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Stats -->
+    <section class="stats-section">
+        <div class="stats-content">
+            <h2>Our Track Record</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">~30</span>
+                    <div class="stat-label">Years of Experience</div>
+                    <p class="stat-detail">Founded in 1999</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">$3B+</span>
+                    <div class="stat-label">Transaction Value</div>
+                    <p class="stat-detail">In residential closings</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3,000+</span>
+                    <div class="stat-label">Properties Closed</div>
+                    <p class="stat-detail">Across Baja California Sur</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1,000+</span>
+                    <div class="stat-label">Businesses Served</div>
+                    <p class="stat-detail">Established and advised</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: Pricing -->
+    <section class="pricing-section">
+        <div class="pricing-content">
+            <div class="section-header">
+                <h2>The True Value of Expertise</h2>
+                <div class="section-line"></div>
+                <p class="pricing-intro">We believe in transparent pricing, therefore below you will find a brief explanation of the pricing of some of the concepts included in our estimates.</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="ph ph-bank"></i>
+                        <h3>Trustee Fees</h3>
+                    </div>
+                    <p>Our trustee fees are determined by referencing the average rates of the most widely utilized trustees in Baja California Sur. These fees cover the administration and safekeeping of your property trust (fideicomiso), which is required for foreign nationals purchasing real estate in Mexico's restricted zone.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="ph ph-certificate"></i>
+                        <h3>Certificates of No Liens</h3>
+                    </div>
+                    <p>To avoid surprises regarding the registration status of a property that might delay the closing process and generate additional costs, we request two (2) Certificates of No Liens per closing — one at the beginning of the process and the second to use at closing.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="ph ph-seal"></i>
+                        <h3>Notarial Fees</h3>
+                    </div>
+                    <p>Notarial fees are determined according to the tariff established by the College of Notaries of Baja California Sur. These fees are standardized across the state and cover the legal formalization of your transaction before a licensed Notary Public.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="ph ph-chart-line-up"></i>
+                        <h3>Exchange Rate Considerations</h3>
+                    </div>
+                    <p>For quotations, we consider recent exchange rate fluctuations. We try to keep costs as low as possible, while adding a margin that allows adjustments in case the exchange rate decreases in the future.</p>
+                </div>
+
+                <div class="pricing-card pricing-card-highlight">
+                    <div class="card-header">
+                        <i class="ph ph-warning-circle"></i>
+                        <h3>Important Note: Parking Spaces &amp; Garages</h3>
+                    </div>
+                    <p>To provide you with the most accurate closing cost estimate, please let us know if your unit and garage or parking space have different cadastral keys (property tax identification numbers). When this is the case, costs increase because an additional permit from the Ministry of Foreign Affairs (SRE) must be requested. Furthermore, trustee fees also rise since the trustee bank considers the garage or parking space and the unit as two separate properties.</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <h3 class="table-title">Approximate Cost Ranges</h3>
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Approximate Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trustee Fee (annual)</td><td>~$480 – $580 USD + VAT</td></tr>
+                        <tr><td>Certificate of No Liens</td><td>~$50 USD each (2 per closing)</td></tr>
+                        <tr><td>Certificate of No Water Debt</td><td>~$65 USD</td></tr>
+                        <tr><td>Notarial Fees</td><td>Per College of Notaries tariff</td></tr>
+                        <tr><td>SRE Permit (if separate cadastral key)</td><td>Additional cost applies</td></tr>
+                    </tbody>
+                </table>
+                <p class="table-note">* All figures are approximate and subject to change based on current rates and exchange fluctuations. A personalized estimate will be provided for your specific transaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Testimonials -->
+    <section class="testimonials-section">
+        <div class="testimonials-content">
+            <h2>Voices of Trust</h2>
+            <div class="section-line"></div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <blockquote>
+                        <p>"Attorney Javier Mazoy and his team at Lex Advisors have provided us with outstanding legal representation in a wide range of matters in Mexico, including real estate, tax, and cross-border issues. Throughout our experience, he has consistently demonstrated a high level of professionalism, legal expertise, and meticulous attention to detail. Javier's ability to clearly and thoughtfully explain complex legal matters gives us great confidence in his counsel. We hold his services in the highest regard and recommend Lex Advisors without hesitation to anyone seeking dependable and knowledgeable legal representation."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Stephen LaFrance &amp; Eric Iloski</strong>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <blockquote>
+                        <p>"Lex Advisors and his professional associates are very knowledgeable, dedicated and reliable attorneys. We do not hesitate to recommend them to many of our customers for their Real Estate legal needs and we will continue to do so, as they maintain a high level of customer satisfaction."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Jorge Carrera</strong>
+                        <span>CEO / Managing Partner, Querencia</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <blockquote>
+                        <p>"For more than 25 years, our closings team has worked closely with Lex Advisors, building a trusted partnership that has been foundational to Engel &amp; Völkers Snell Real Estate. Their legal oversight and deep understanding of Mexican real estate law contribute to smooth, secure closings and provide confidence for our clients throughout the transaction process."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Vanessa Fukunaga</strong>
+                        <span>Owner &amp; CEO, Engel &amp; Völkers Snell Real Estate</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <blockquote>
+                        <p>"Sandie and I have been working with Javier Mazoy and his associates at Lex Advisors for 25 years. They have helped us in several different areas: real estate transactions, estate and tax planning and getting relief from insurance companies for storm damages. Their work has always been excellent and reasonable. You won't find a more reliable and honest law firm."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>John Valentine</strong>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <blockquote>
+                        <p>"Lex Advisors assisted me in the top projects in Mexico, Villas del Mar and El Dorado Beach Club starting in 1997. Their multifaceted services included establishing Master Condominium Regimes, legal assistance regarding establishing businesses in Mexico and all phases of real estate transactions. Their ability to interface with our US council was invaluable. I would highly recommend Lex Advisors to assist you with whatever business transaction you plan in Mexico."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Bo Leonard</strong>
+                        <span>Formerly Director of El Dorado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: Closing Thoughts -->
+    <section class="closing-section">
+        <div class="closing-inner">
+            <h2>Our Commitment to You</h2>
+            <p class="closing-text">Every transaction we handle is approached with the same level of <strong>dedication, transparency, and legal rigor</strong> that has defined our practice for nearly three decades. Your confidence in the process is our priority.</p>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: Footer -->
+    <footer class="presentation-footer">
+        <div class="footer-inner">
+            <img src="../files/logos/isotipo_white.png" alt="Lex Advisors" class="footer-logo">
+            <p class="footer-tagline">Your lawyer at Land's End</p>
+            <p class="footer-cta">Ready to move forward with confidence?</p>
+            <div class="footer-info">
+                <p>Paseo Finisterra #136 Suite 6 &amp; 10 | San Jose del Cabo, B.C.S. 23406</p>
+                <p><a href="tel:+526241425453">(624) 142 5453</a> | <a href="tel:+526241425452">(624) 142 5452</a></p>
+                <p><a href="mailto:info@lexadvisorsmx.com">info@lexadvisorsmx.com</a> | <a href="https://lexadvisorsmx.com" target="_blank">lexadvisorsmx.com</a></p>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright">&copy; 2026 Lex Advisors S.C. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // IntersectionObserver for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.diff-card, .pricing-card, .stat-item, .testimonial-card, .section-line').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll indicator fade
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', () => {
+            scrollIndicator.style.opacity = window.scrollY > 100 ? '0' : '1';
+        });
+
+        // Slide counter + lang switcher adaptive color
+        const sections = document.querySelectorAll('section, footer');
+        const slideNum = document.querySelector('.slide-counter .current');
+        const langSwitcher = document.querySelector('.lang-switcher');
+        const lightSections = document.querySelectorAll('.differentiators-section, .pricing-section, .closing-section');
+
+        window.addEventListener('scroll', () => {
+            let current = 1;
+            sections.forEach((section, i) => {
+                if (section.getBoundingClientRect().top < window.innerHeight / 2) {
+                    current = i + 1;
+                }
+            });
+            slideNum.textContent = current;
+
+            // Check if lang switcher overlaps a light section
+            const switcherY = langSwitcher.getBoundingClientRect().top + langSwitcher.getBoundingClientRect().height / 2;
+            let onLight = false;
+            lightSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (switcherY >= rect.top && switcherY <= rect.bottom) {
+                    onLight = true;
+                }
+            });
+            langSwitcher.classList.toggle('on-light', onLight);
+        });
+    </script>
+</body>
+</html>
